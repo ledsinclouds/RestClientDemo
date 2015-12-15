@@ -1,0 +1,41 @@
+<?php
+//echo $this->headLink()->appendStylesheet($this->basePath('css/StickyNotes.css'));
+?>
+<h1>Curl Albums Listing</h1>
+<div class="row">
+	<ul>
+		<li><a href="<?php echo $this->url('album', array('action' => 'create')) ?>">Create an Album</a></li>
+	</ul>	
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-12">	
+		<div class="demo-box">
+			<table class="mGrid table table-bordered" id="jsondata">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Title</th>
+						<th>Artist</th>
+						<th>Songs</th>
+						<th></th>						
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($data as $key => $val): ?>						
+						<tr>
+							<td><?php echo $val['id']; ?></td>
+							<td><?php echo $val['title']; ?></td>
+							<td><?php echo $val['artist']; ?></td>
+							<td><?php echo count($val["_embedded"]['songs']); ?></td>	
+							<td>
+								<a href="<?php echo $this->url('album', array('action' => 'update', 'album_id' => $val['id'])); ?>">Edit Album</a> |
+								<a href="<?php echo $this->url('album', array('action' => 'delete', 'album_id' => $val['id'])); ?>">Delete Album</a> |								
+								<a href="<?php echo $this->url('songs', array('action' => 'index', 'album_id' => $val['id'])); ?>">Songs List</a> 																
+							</td>																																				
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
+	</div>  
+ </div>

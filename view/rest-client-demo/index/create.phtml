@@ -1,0 +1,29 @@
+<h1>User Form</h1>
+<?php
+$form = $this->form;
+		
+echo $this->form()->openTag($form);
+
+echo $this->formLabel($form->get('artist'));
+echo $this->formElement($form->get('artist'));
+echo $this->formElementErrors($form->get('artist'));
+echo $this->formLabel($form->get('title'));
+echo $this->formElement($form->get('title'));
+echo $this->formElementErrors($form->get('title'));
+echo '<br>';
+echo $this->formSubmit($form->get('submit'));
+
+//$user = $form->get('handle');
+//echo $this->formLabel($user->get('username'));
+//echo $this->formElement($user->get('username'));
+//echo $this->formElementErrors($user->get('username'));
+//echo $this->formLabel($user->get('fullname'));
+//echo $this->formElement($user->get('fullname'));
+//echo $this->formElementErrors($user->get('fullname'));
+//echo $this->formLabel($user->get('password'));
+//echo $this->formElement($user->get('password'));
+//echo $this->formElementErrors($user->get('password'));
+//echo $this->formSubmit($form->get('submit'));
+
+echo $this->form()->closeTag($form);
+ 

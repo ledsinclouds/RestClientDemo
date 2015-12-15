@@ -1,0 +1,29 @@
+{
+    "name": "ledsinclouds/rest-client-demo",
+    "description": "ZF2 Rest client application demo",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2",
+        "album",
+        "rest",
+        "rest-client-demo"
+    ],
+    "homepage": "https://github.com/ledsinclouds/RestClientDemo.git",
+    "minimum-stability": "dev",
+    "repositories": [
+		{
+			"type": "vcs", 
+			"url": "https://github.com/ledsinclouds/RestClientDemo.git"
+		}
+    ],
+    "require": {
+        "php": ">=5.3.3"       	
+    },
+    "autoload": {
+        "psr-0": {
+            "RestClientDemo\\": "src/"
+        }
+    }
+}   
